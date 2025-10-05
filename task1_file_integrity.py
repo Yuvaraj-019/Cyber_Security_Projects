@@ -1,11 +1,3 @@
-# ============================================================
-# File Integrity Checker - Final Version (Menu + Log File)
-# Author: Atreus
-# Description:
-#   Monitors files for changes using SHA-256 hashes.
-#   Provides a menu for scanning, viewing, resetting, and logs.
-# ============================================================
-
 import hashlib
 import os
 import json
@@ -15,7 +7,7 @@ from datetime import datetime
 HASH_DB = "hashes.json"
 LOG_FILE = "scan_report.txt"
 
-# --------------------- Core Functions ---------------------
+
 
 def sha256_file(path):
     """Compute SHA-256 hash of a given file."""
@@ -95,7 +87,7 @@ def scan_folder(folder):
     log_scan(report, folder)
     return report
 
-# --------------------- Utility Functions ---------------------
+
 
 def view_hash_database():
     """Display all stored file hashes in a safe, professional format."""
@@ -135,7 +127,7 @@ def reset_database():
     else:
         print("\n[!] Nothing to reset.")
 
-# --------------------- Menu System ---------------------
+
 
 def main_menu():
     while True:
@@ -180,7 +172,7 @@ def main_menu():
         else:
             print("\n[!] Invalid choice. Please select 1–5.")
 
-# --------------------- Entry Point ---------------------
+
 
 if __name__ == "__main__":
     main_menu()
