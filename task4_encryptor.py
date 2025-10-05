@@ -1,25 +1,15 @@
-#!/usr/bin/env python3
-"""
-task4_encryptor.py
-AES-256-GCM File Encryptor / Decryptor (Interactive Version with Smart Path Saving)
-
-Now encrypted (.enc) and decrypted files are stored in the same
-directory as the original file.
-"""
-
 import os
 import getpass
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
-# ---- Parameters ----
+
 SALT_SIZE = 16
 NONCE_SIZE = 12
 KDF_ITERATIONS_DEFAULT = 200_000
 KEY_LENGTH = 32  # 256-bit key
 
-# ---- Key derivation ----
 def derive_key(password: bytes, salt: bytes, iterations: int) -> bytes:
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -88,7 +78,7 @@ def decrypt_file(in_path: str, password: str, iterations: int = KDF_ITERATIONS_D
     print(f"📁 Input : {in_path}")
     print(f"📄 Output: {out_path}\n")
 
-# ---- Interactive Menu ----
+
 def main():
     print("=" * 60)
     print("🛡️  AES-256-GCM File Encryptor / Decryptor")
