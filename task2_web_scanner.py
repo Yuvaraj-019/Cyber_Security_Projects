@@ -1,8 +1,3 @@
-# task2_advanced_web_scanner.py
-# Advanced Web Vulnerability Scanner: Tests SQLi, XSS, CSRF. Shows process and results in console.
-# Educational use only. No file reports generated. Inspired by Wapiti and OWASP ZAP features.
-# Tested on http://testphp.vulnweb.com for demo.
-
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
