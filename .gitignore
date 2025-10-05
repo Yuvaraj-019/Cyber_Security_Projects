@@ -1,0 +1,13 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Logs and generated files
+hashes.json
+scan_report.txt
+bruteforce_log.txt
+*.enc
+
+# System files
+.DS_Store
